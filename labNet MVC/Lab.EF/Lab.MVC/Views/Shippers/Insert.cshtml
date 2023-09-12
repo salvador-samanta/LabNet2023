@@ -1,0 +1,28 @@
+﻿@model Lab.MVC.Models.ShippersView
+@{
+    ViewBag.Title = Model.IsInsert ? "Insertar Shipper" : "Editar Shipper";
+    string submitText = Model.IsInsert ? "Guardar" : "Actualizar";
+}
+
+<h1>@ViewBag.Title</h1>
+
+@using (Html.BeginForm(Model.IsInsert ? "Insert" : "Update", "Shippers", FormMethod.Post))
+{
+    @Html.HiddenFor(model => model.Id)
+    @Html.HiddenFor(model => model.IsInsert)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.CompanyName)
+        @Html.TextBoxFor(model => model.CompanyName, new { @class = "form-control" })
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.CompanyName)</span>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Phone)
+        @Html.TextBoxFor(model => model.Phone, new { @class = "form-control" })
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.Phone)</span>
+    </div>
+    <br />
+    <input type="submit" value="@submitText" class="btn btn-primary" />
+    @Html.ActionLink("Volver al listado", "Index", null, new { @class = "btn btn-secondary" })
+}
