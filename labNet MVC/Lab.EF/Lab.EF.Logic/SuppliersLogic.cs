@@ -62,9 +62,14 @@ namespace Lab.EF.Logic
 
         }
 
-        public async Task<Suppliers> checkExist(int id)
+        public async Task<Suppliers> CheckExist(int id)
         {
             return await context.Suppliers.FirstOrDefaultAsync(e => e.SupplierID == id);
+        }
+
+        public Suppliers GetById(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

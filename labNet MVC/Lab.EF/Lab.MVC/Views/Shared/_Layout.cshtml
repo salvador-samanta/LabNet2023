@@ -20,6 +20,11 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
         </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("API de los Simpsons", "Index", "Simpson")</li>
+            </ul>
+        </div>
     </nav>
     <div class="container body-content">
         @RenderBody()

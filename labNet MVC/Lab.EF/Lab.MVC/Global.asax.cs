@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using AutoMapper;
+using Lab.EF.Logic.Mapper;
 
 namespace Lab.MVC
 {
@@ -12,6 +14,12 @@ namespace Lab.MVC
     {
         protected void Application_Start()
         {
+            var MapperConfig = new MapperConfiguration(cfg =>
+            {
+                cfg.AddProfile(new SimpsonsMapper());
+            });
+            var mapper = MapperConfig.CreateMapper();
+
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

@@ -1,0 +1,33 @@
+﻿@model List<Lab.MVC.Models.SimpsonView>
+@{
+    ViewBag.Title = "SimpsonView";
+}
+
+<h2>Simpson API</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Historia</th>
+            <th scope="col">Imagen</th>
+            <th scope="col">Genero</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Ocupacion</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>@i.Nombre</td>
+                <td>@i.Historia</td>
+                <td><img src="@i.Imagen" alt="Imagen de @i.Nombre" width="100" height="100" /></td>
+                <td>@i.Genero</td>
+                <td>@i.Estado</td>
+                <td>@i.Ocupacion</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

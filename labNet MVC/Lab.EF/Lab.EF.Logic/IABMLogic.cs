@@ -8,12 +8,13 @@ using System.Threading.Tasks;
 
 namespace Lab.EF.Logic
 {
-    interface IABMLogic<T>
+    public interface IABMLogic<T>
     {
         Task<List<T>> GetAllAsync();
         Task AddAsync(T newShippers);
         Task DeleteAsync(int id);
         Task UpdateAsync(T shippers);
-        Task<T> checkExist(int id);
+        Task<T> CheckExist(int id);
+        T GetById(int id);
     }
 }

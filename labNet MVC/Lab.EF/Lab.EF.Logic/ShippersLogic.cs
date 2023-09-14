@@ -1,5 +1,6 @@
 ﻿using Lab.Demo.Data;
 using Lab.Demo.Entities;
+using Lab.EF.Logic.DTO;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -77,7 +78,7 @@ namespace Lab.EF.Logic
                 throw new Exception(ex.Message);
             }
         }
-        public async Task<Shippers> checkExist(int id)
+        public async Task<Shippers> CheckExist(int id)
         {
             return await context.Shippers.FirstOrDefaultAsync(e => e.ShipperID == id);
         }

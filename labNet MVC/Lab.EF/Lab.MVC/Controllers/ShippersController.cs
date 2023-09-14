@@ -3,13 +3,9 @@ using Lab.EF.Logic;
 using Lab.MVC.Models;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.Eventing.Reader;
 using System.Linq;
-using System.Runtime.Remoting.Messaging;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.Mvc;
-using System.Web.WebPages.Html;
 
 namespace Lab.MVC.Controllers
 {
@@ -23,11 +19,11 @@ namespace Lab.MVC.Controllers
 
             List<ShippersView> shippersView = shippers.Select(s => new ShippersView
             {
-                Id = s.ShipperID, 
+                Id = s.ShipperID,
                 CompanyName = s.CompanyName,
                 Phone = s.Phone,
             }).ToList();
-            
+
             return View(shippersView);
         }
 
